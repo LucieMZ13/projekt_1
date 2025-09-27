@@ -53,8 +53,8 @@ number_of_texts = len(TEXTS)
 
 
 
-username = input("Username: ")
-password = input("Password: ")
+username = input("Username: ").strip()
+password = input("Password: ").strip()
 
 is_registered = False
 for user in all_users.values():
@@ -73,11 +73,18 @@ else:
 print("We have", number_of_texts, "texts to be analyzed.")
 print(separator)
 
-text_choice = input(f"Enter a number between 1 and {number_of_texts} to select:")
-if int(text_choice) > number_of_texts:
-    print("This text does not exist, terminating the program.")
-    quit()
-chosen_text = TEXTS[int(text_choice)-1]
+while True:
+    text_choice = input(f"Enter a number between 1 and {number_of_texts} to select:").strip()
+    if not text_choice.isnumeric():
+        print("Please enter a number.")
+        continue
+    text_choice = int(text_choice)
+    if int(text_choice) > number_of_texts:
+        print("This text does not exist, terminating the program.")
+        quit()
+    break
+
+chosen_text = TEXTS[text_choice -1]
 chosen_text_split = chosen_text.split()
 chosen_text_plain = [word.strip(string.punctuation) for word in chosen_text_split]
 print(separator)
