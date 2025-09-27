@@ -91,11 +91,6 @@ for word in chosen_text_plain:
         lowercase_words +=1
     elif word.isnumeric():
         numeric_strings.append(word)
-    else:
-        continue
-
-for word in chosen_text_plain:
-    if word.isnumeric():
         sum_of_numbers += int(word)
     else:
         continue
