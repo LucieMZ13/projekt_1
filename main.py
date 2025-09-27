@@ -53,8 +53,8 @@ number_of_texts = len(TEXTS)
 
 
 
-username = input("username")
-password = input("password")
+username = input("Username: ")
+password = input("Password: ")
 
 is_registered = False
 for user in all_users.values():
@@ -107,7 +107,7 @@ print("There are", lowercase_words, "lowercase words.")
 print("There are", len(numeric_strings), "numeric strings.")
 print("The sum of all the numbers is", sum_of_numbers)
 print(separator)
-print(f"{"LEN":>4}|{"OCCURENCES".center(20)}|{"NR.":<3}")
+print(f'{"LEN":>4}|{"OCCURENCES".center(20)}|{"NR.":<3}')
 print(separator)
 
 length_of_word = [len(word) for word in chosen_text_plain]
