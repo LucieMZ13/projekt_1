@@ -33,15 +33,9 @@ TEXTS = [
     in modern oceans. Other fish such as paddlefish,
     garpike and stingray are also present.'''
 ]
-registered_user_1 = {"username" : "bob", "password" : "123"}
-registered_user_2 = {"username" : "ann", "password" : "pass123"}
-registered_user_3 = {"username" : "mike", "password" : "password123"}
-registered_user_4 = {"username" : "liz", "password" : "pass123"}
-all_users = dict()
-all_users["user_1"] = registered_user_1
-all_users["user_2"] = registered_user_2
-all_users["user_3"] = registered_user_3
-all_users["user_4"] = registered_user_4
+
+all_users = {"user_1": {"username" : "bob", "password" : "123"}, "user_2": {"username" : "ann", "password" : "pass123"},
+"user_3": {"username" : "mike", "password" : "password123"}, "user_4": {"username" : "liz", "password" : "pass123"}}
 
 separator = "-" * 40
 titlecase_words = 0
@@ -79,7 +73,7 @@ while True:
         print("Please enter a number.")
         continue
     text_choice = int(text_choice)
-    if int(text_choice) > number_of_texts:
+    if int(text_choice) > number_of_texts or int(text_choice) == 0:
         print("This text does not exist, terminating the program.")
         quit()
     break
